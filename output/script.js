@@ -9,11 +9,46 @@ const data = {
     ],
     highlight: 'Across the world, the most severe fires have occurred in Australia, the Amazon, North America, and parts of Europe and Asia.',
     hotspots: [
-      { name: 'Indonesia peat fires', detail: '2015-2016 • severe smoke and land loss', x: 60.2, y: 46.6 },
-      { name: 'Portugal fires', detail: '2017 • rapid spread through dry forests', x: 46.5, y: 34.2 },
-      { name: 'Canada wildfire crisis', detail: '2023 • record-sized fire season', x: 24.8, y: 22.6 },
-      { name: 'Amazon rainforest fires', detail: '2019 • biodiversity and forest damage', x: 31.5, y: 58.5 },
-      { name: 'Black Summer', detail: '2019-2020 • catastrophic wildlife and home loss', x: 75.1, y: 69.2 }
+      {
+        name: 'Indonesia peat fires',
+        country: 'Indonesia',
+        year: '2015-2016',
+        damage: 'Severe smoke pollution and extensive peatland destruction.',
+        x: 60.2,
+        y: 46.6
+      },
+      {
+        name: 'Portugal fires',
+        country: 'Portugal',
+        year: '2017',
+        damage: 'Deadly fires destroyed homes, forests, and farmland.',
+        x: 46.5,
+        y: 34.2
+      },
+      {
+        name: 'Canada wildfire crisis',
+        country: 'Canada',
+        year: '2023',
+        damage: 'Record-sized wildfire season caused massive land loss and smoke impacts.',
+        x: 24.8,
+        y: 22.6
+      },
+      {
+        name: 'Amazon rainforest fires',
+        country: 'Brazil',
+        year: '2019',
+        damage: 'Biodiversity loss and forest degradation across the Amazon basin.',
+        x: 31.5,
+        y: 58.5
+      },
+      {
+        name: 'Black Summer',
+        country: 'Australia',
+        year: '2019-2020',
+        damage: 'Millions of hectares burned, with catastrophic wildlife and property loss.',
+        x: 75.1,
+        y: 69.2
+      }
     ]
   },
   asia: {
@@ -278,7 +313,9 @@ function renderHomePage() {
                 class="world-hotspot globe-hotspot"
                 type="button"
                 data-name="${spot.name}"
-                data-detail="${spot.detail}"
+                data-country="${spot.country}"
+                data-year="${spot.year}"
+                data-damage="${spot.damage}"
                 style="left:${spot.x}%; top:${spot.y}%;"
                 aria-label="${spot.name}"
               ></button>
@@ -301,10 +338,16 @@ function renderHomePage() {
 
   document.querySelectorAll('.world-hotspot').forEach((marker) => {
     marker.addEventListener('mouseenter', (event) => {
-      showTooltip(event, `${marker.dataset.name}<br>${marker.dataset.detail}`);
+      showTooltip(
+        event,
+        `<strong>${marker.dataset.name}</strong><br>Country: ${marker.dataset.country}<br>Year: ${marker.dataset.year}<br>Damage: ${marker.dataset.damage}`
+      );
     });
     marker.addEventListener('mousemove', (event) => {
-      showTooltip(event, `${marker.dataset.name}<br>${marker.dataset.detail}`);
+      showTooltip(
+        event,
+        `<strong>${marker.dataset.name}</strong><br>Country: ${marker.dataset.country}<br>Year: ${marker.dataset.year}<br>Damage: ${marker.dataset.damage}`
+      );
     });
     marker.addEventListener('mouseleave', hideTooltip);
   });
