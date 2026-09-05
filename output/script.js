@@ -9,11 +9,11 @@ const data = {
     ],
     highlight: 'Across the world, the most severe fires have occurred in Australia, the Amazon, North America, and parts of Europe and Asia.',
     hotspots: [
-      { name: 'Indonesia peat fires', detail: '2015-2016 • severe smoke and land loss', x: 69, y: 56 },
-      { name: 'Portugal fires', detail: '2017 • rapid spread through dry forests', x: 46, y: 30 },
-      { name: 'Canada wildfire crisis', detail: '2023 • record-sized fire season', x: 21, y: 20 },
-      { name: 'Amazon rainforest fires', detail: '2019 • biodiversity and forest damage', x: 32, y: 68 },
-      { name: 'Black Summer', detail: '2019-2020 • catastrophic wildlife and home loss', x: 72, y: 80 }
+      { name: 'Indonesia peat fires', detail: '2015-2016 • severe smoke and land loss', x: 60.2, y: 46.6 },
+      { name: 'Portugal fires', detail: '2017 • rapid spread through dry forests', x: 46.5, y: 34.2 },
+      { name: 'Canada wildfire crisis', detail: '2023 • record-sized fire season', x: 24.8, y: 22.6 },
+      { name: 'Amazon rainforest fires', detail: '2019 • biodiversity and forest damage', x: 31.5, y: 58.5 },
+      { name: 'Black Summer', detail: '2019-2020 • catastrophic wildlife and home loss', x: 75.1, y: 69.2 }
     ]
   },
   asia: {
@@ -271,18 +271,19 @@ function renderHomePage() {
       </div>
 
       <div class="map-panel">
-        <div style="position: relative; width: 100%; height: 100%; min-height: 370px;">
-          <img src="assets/world-map.svg" alt="World bushfire map" />
-          ${info.hotspots.map((spot) => `
-            <button
-              class="world-hotspot"
-              type="button"
-              data-name="${spot.name}"
-              data-detail="${spot.detail}"
-              style="left:${spot.x}%; top:${spot.y}%;"
-              aria-label="${spot.name}"
-            ></button>
-          `).join('')}
+        <div class="globe-stage">
+          <div class="globe" aria-label="Global bushfire hotspots">
+            ${info.hotspots.map((spot) => `
+              <button
+                class="world-hotspot globe-hotspot"
+                type="button"
+                data-name="${spot.name}"
+                data-detail="${spot.detail}"
+                style="left:${spot.x}%; top:${spot.y}%;"
+                aria-label="${spot.name}"
+              ></button>
+            `).join('')}
+          </div>
         </div>
       </div>
     </section>

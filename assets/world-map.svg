@@ -1,15 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Simplified world map">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Magazine-style world map highlighting major bushfire regions">
+  <defs>
+    <linearGradient id="landGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d4a73"/>
+      <stop offset="100%" stop-color="#1a2d46"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
   <rect width="900" height="560" fill="#0f1d2f"/>
-  <g fill="#213a5a" stroke="#3e5c84" stroke-width="1.2">
-    <path d="M30 180 L84 150 L120 118 L146 124 L176 114 L220 125 L250 160 L236 188 L176 214 L128 248 L90 246 L52 214 Z"/>
-    <path d="M268 160 L315 120 L370 120 L410 136 L462 142 L496 170 L486 198 L452 214 L412 230 L382 220 L336 196 L294 198 Z"/>
-    <path d="M520 172 L572 148 L636 166 L698 182 L760 198 L794 228 L770 272 L704 290 L628 298 L578 278 L542 236 Z"/>
-    <path d="M608 320 L654 300 L708 314 L756 362 L732 430 L672 462 L610 448 L576 396 Z"/>
-    <path d="M174 300 L220 282 L264 298 L304 330 L288 384 L246 420 L196 400 L166 356 Z"/>
+
+  <g fill="url(#landGlow)" stroke="#6a8bb3" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round">
+    <!-- North America -->
+    <path d="M86 172 L110 124 L148 108 L186 112 L218 124 L246 142 L270 162 L264 190 L236 202 L206 214 L170 232 L128 246 L98 224 L72 190 Z"/>
+    <path d="M176 140 L196 132 L216 136 L222 150 L206 160 L178 156 Z"/>
+
+    <!-- South America -->
+    <path d="M236 262 L262 248 L286 258 L306 280 L318 320 L310 360 L292 398 L278 436 L248 456 L226 436 L214 394 L220 344 L208 300 Z"/>
+    <path d="M262 290 L288 300 L296 330 L288 354 L270 366 L250 350 L246 318 Z"/>
+
+    <!-- Europe -->
+    <path d="M342 172 L360 154 L390 152 L420 166 L440 182 L434 206 L408 216 L374 220 L348 206 Z"/>
+
+    <!-- Africa -->
+    <path d="M404 236 L430 228 L452 236 L470 262 L476 302 L464 336 L440 370 L418 384 L394 366 L388 328 L392 278 Z"/>
+    <path d="M428 246 L448 252 L452 282 L436 298 L420 288 L416 264 Z"/>
+
+    <!-- Asia -->
+    <path d="M452 174 L486 148 L530 138 L578 140 L620 146 L668 164 L704 178 L736 194 L758 214 L750 242 L724 256 L688 270 L650 282 L618 288 L586 282 L554 270 L522 252 L494 236 L470 212 Z"/>
+    <path d="M600 282 L632 292 L650 316 L646 346 L622 370 L598 382 L578 366 L570 334 L578 304 Z"/>
+    <path d="M700 122 L728 112 L758 120 L772 136 L766 156 L738 166 L710 158 L694 140 Z"/>
+    <path d="M758 286 L770 280 L784 288 L782 300 L766 304 Z"/>
+    <path d="M578 218 L600 212 L614 224 L604 236 L586 234 Z"/>
+
+    <!-- Australia -->
+    <path d="M690 332 L720 318 L754 320 L780 332 L808 352 L828 376 L822 406 L794 432 L752 446 L714 440 L692 404 L680 368 Z"/>
+    <path d="M740 362 L760 356 L774 366 L770 380 L754 388 L738 380 Z"/>
+
+    <!-- Greenland -->
+    <path d="M246 100 L266 88 L282 96 L288 114 L276 124 L252 118 Z"/>
   </g>
-  <g fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2">
-    <path d="M66 120 C92 102, 122 104, 142 116"/>
-    <path d="M298 128 C326 120, 356 126, 382 138"/>
-    <path d="M612 166 C654 154, 692 164, 734 180"/>
+
+  <g fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1">
+    <path d="M110 166 C150 140, 186 138, 230 160"/>
+    <path d="M388 170 C410 160, 430 166, 448 180"/>
+    <path d="M530 180 C584 160, 638 162, 704 188"/>
+    <path d="M414 298 C438 312, 454 334, 440 358"/>
+    <path d="M698 350 C730 342, 780 350, 810 382"/>
+  </g>
+
+  <g filter="url(#softGlow)">
+    <circle cx="570" cy="266" r="6.2" fill="#ffb703" opacity="0.75"/>
+    <circle cx="392" cy="186" r="6.2" fill="#ffb703" opacity="0.75"/>
+    <circle cx="186" cy="176" r="6.2" fill="#ffb703" opacity="0.75"/>
+    <circle cx="258" cy="346" r="6.2" fill="#ffb703" opacity="0.75"/>
+    <circle cx="748" cy="390" r="6.2" fill="#ffb703" opacity="0.75"/>
   </g>
 </svg>
