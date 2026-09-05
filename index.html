@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bushfire Watch</title>
+    <meta
+      name="description"
+      content="Interactive website showing major bushfires over the past decade and their impact worldwide."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="output/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">🔥</div>
+          <div>
+            <p class="eyebrow">Global insight</p>
+            <h1>Bushfire Watch</h1>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-tab active" data-tab="home">Home</button>
+          <button class="nav-tab" data-tab="asia">Asia</button>
+          <button class="nav-tab" data-tab="europe">Europe</button>
+          <button class="nav-tab" data-tab="north-america">North America</button>
+          <button class="nav-tab" data-tab="south-america">South America</button>
+          <button class="nav-tab" data-tab="australia-nz">Australia &amp; NZ</button>
+          <button class="nav-tab" data-tab="contribution">Contribution</button>
+        </nav>
+      </header>
+
+      <main id="page-content" class="content"></main>
+    </div>
+
+    <div id="tooltip" class="tooltip" aria-live="polite"></div>
+
+    <script src="output/script.js"></script>
+  </body>
+</html>
